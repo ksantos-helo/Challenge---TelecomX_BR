@@ -135,6 +135,21 @@ Esses resultados indicam que estratégias de retenção devem focar principalmen
 
 ## 📊 Visualizações da Análise
 
+### 📈 Distribuição de Churn
+
+![Distribuição de Churn](images/distribuicao_churn.png)
+
+### 📄 Churn por Tipo de Contrato
+
+![Churn por Contrato](images/Churn_por_contrato.png)
+
+### ⏳ Tempo de Contrato vs Cancelamento
+
+![Distribuição do Tempo de Contrato](images/distribuicao_tempo.png)
+
+### 🔗 Correlação entre Variáveis
+
+![Heatmap de Correlação](images/correlacao.png)
 
 
 ## 🚀 Como Executar o Projeto
