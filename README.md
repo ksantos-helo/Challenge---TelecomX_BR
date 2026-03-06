@@ -2,44 +2,39 @@
 
 ## 📌 Sobre o Projeto
 
-Este projeto tem como objetivo analisar os fatores que influenciam a evasão de clientes (Churn) em uma empresa fictícia de telecomunicações chamada Telecom X.
+| Item                       | Descrição                                                                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🏢 **Contexto**            | Este projeto analisa os fatores que influenciam a **evasão de clientes (Churn)** em uma empresa fictícia de telecomunicações chamada **Telecom X**.       |
+| 📊 **Problema de Negócio** | A evasão de clientes é um desafio crítico para empresas de serviços recorrentes.                                                                          |
+| 📉 **Impactos do Churn**   | ✔️ 📉 Redução da **receita recorrente** <br> ✔️ 💰 Aumento dos **custos de aquisição de novos clientes** <br> ✔️ 📊 Impacto no **crescimento do negócio** |
+| 🔎 **Abordagem Analítica** | Utilização de **Análise Exploratória de Dados (EDA)** para identificar padrões de comportamento associados ao cancelamento de clientes.                   |
+| 💡 **Resultado Esperado**  | Gerar **insights estratégicos** que apoiem ações de retenção e melhoria da experiência do cliente.                                                        |
 
-A evasão de clientes é um problema crítico para empresas de serviços recorrentes, pois impacta diretamente:
-
-✔️📉 Receita recorrente
-
-✔️💰 Custos de aquisição de novos clientes
-
-✔️📊 Crescimento do negócio
-
-Através de Análise Exploratória de Dados (EDA), buscamos identificar padrões de comportamento que ajudam a explicar por que clientes cancelam o serviço.
-
-Os insights gerados podem apoiar estratégias de retenção e melhoria da experiência do cliente.
 
 ## 🎯 Objetivos da Análise
 
-✔️Identificar fatores que influenciam o cancelamento de clientes
+| Objetivo                                 | Descrição                                                                       |
+| ---------------------------------------- | ------------------------------------------------------------------------------- |
+| 🔍 **Identificar fatores de churn**      | Analisar quais variáveis estão mais associadas ao cancelamento de clientes.     |
+| 👥 **Explorar padrões de comportamento** | Investigar dados **demográficos, financeiros e de serviços contratados**.       |
+| 🔗 **Avaliar correlações**               | Identificar relações entre variáveis que podem influenciar o churn.             |
+| 💡 **Gerar insights estratégicos**       | Produzir recomendações baseadas em dados para **reduzir a evasão de clientes**. |
 
-✔️Explorar padrões em dados demográficos, financeiros e de serviços
-
-✔️Avaliar correlações entre variáveis
-
-✔️Gerar insights estratégicos para retenção de clientes
 
 ## 📂 Estrutura do Projeto
 
 ```
 telecom-churn-analysis/
 │
-├── README.md                     # Documentação do projeto
-├── telecom_churn_analysis.ipynb  # Notebook com análise dos dados
+├── README.md
+├── telecom_churn_analysis.ipynb
 │
-└── data/
-    └── TelecomX_Data.json        # Base de dados utilizada no projeto
-
+├── data/
+│   └── TelecomX_Data.json
+│
+└── images/
+    └── charts (opcional para gráficos do projeto)
 ```
-
-
 
 Descrição dos arquivos:
 
@@ -83,8 +78,7 @@ O conjunto de dados contém informações sobre clientes da Telecom X, incluindo
 | `1`   | Cliente cancelou o serviço    |
 
 
-
-##⚙️ Tecnologias Utilizadas
+## ⚙️ Tecnologias Utilizadas
 
 Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 
@@ -120,6 +114,26 @@ A análise revelou padrões importantes sobre o comportamento dos clientes.
 | ⏳ **Clientes novos cancelam mais**                          | A maior parte do churn ocorre nos **primeiros meses de contrato**, indicando maior risco no início da jornada do cliente.                          | ➡ Implementar **onboarding estruturado** e acompanhamento nos primeiros meses para aumentar retenção. |
 | 💰 **Valores mensais mais altos aumentam o risco de churn** | Clientes com **MonthlyCharges mais elevados** apresentam maior probabilidade de cancelar o serviço.                                                | ➡ Avaliar a **percepção de custo-benefício dos planos** e oferecer alternativas mais atrativas.       |
 | 🛡️ **Serviços adicionais reduzem churn**                   | Clientes que possuem serviços como **OnlineSecurity, TechSupport e DeviceProtection** apresentam taxas significativamente menores de cancelamento. | ➡ Oferecer **pacotes de serviços adicionais** pode aumentar o engajamento e reduzir churn.            |
+
+
+## 📈 Resultados da Análise
+
+A análise exploratória permitiu identificar padrões importantes no comportamento dos clientes da Telecom X.
+
+Principais resultados observados:
+
+✔️ Clientes com contratos **Month-to-Month** apresentam maior probabilidade de churn.
+
+✔️ A maior parte dos cancelamentos ocorre nos **primeiros meses de contrato**.
+
+✔️ Clientes com **MonthlyCharges mais altos** possuem maior tendência de cancelamento.
+
+✔️ A presença de **serviços adicionais**, como OnlineSecurity e TechSupport, está associada a menores taxas de evasão.
+
+Esses resultados indicam que estratégias de retenção devem focar principalmente em **clientes novos, contratos mensais e oferta de serviços adicionais**.
+
+
+## 📊 Visualizações da Análise
 
 
 
