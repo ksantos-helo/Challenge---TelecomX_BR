@@ -51,165 +51,77 @@ TelecomX_Data.json → dataset utilizado
 
 ## 🗂️ Dataset
 
-O conjunto de dados contém informações sobre clientes da Telecom X, incluindo:
+O conjunto de dados contém informações sobre clientes da Telecom X, incluindo dados demográficos, serviços contratados, informações de conta e dados financeiros utilizados para análise de Churn (cancelamento de clientes).
 
-👥 Dados Demográficos
+| Categoria               | Variável           | Descrição                                   |
+| ----------------------- | ------------------ | ------------------------------------------- |
+| 👥 Dados Demográficos   | `gender`           | Gênero do cliente                           |
+| 👥 Dados Demográficos   | `SeniorCitizen`    | Indica se o cliente possui 65 anos ou mais  |
+| 👥 Dados Demográficos   | `Partner`          | Indica se o cliente possui parceiro(a)      |
+| 👥 Dados Demográficos   | `Dependents`       | Indica se o cliente possui dependentes      |
+| 📡 Serviços Contratados | `PhoneService`     | Cliente possui serviço telefônico           |
+| 📡 Serviços Contratados | `MultipleLines`    | Cliente possui múltiplas linhas telefônicas |
+| 📡 Serviços Contratados | `InternetService`  | Tipo de serviço de internet contratado      |
+| 📡 Serviços Contratados | `OnlineSecurity`   | Serviço de segurança online                 |
+| 📡 Serviços Contratados | `OnlineBackup`     | Serviço de backup online                    |
+| 📡 Serviços Contratados | `DeviceProtection` | Proteção de dispositivo                     |
+| 📡 Serviços Contratados | `TechSupport`      | Suporte técnico                             |
+| 📡 Serviços Contratados | `StreamingTV`      | Serviço de streaming de TV                  |
+| 📡 Serviços Contratados | `StreamingMovies`  | Serviço de streaming de filmes              |
+| 📑 Informações da Conta | `tenure`           | Tempo de permanência do cliente (meses)     |
+| 📑 Informações da Conta | `Contract`         | Tipo de contrato do cliente                 |
+| 📑 Informações da Conta | `PaperlessBilling` | Cliente utiliza fatura digital              |
+| 📑 Informações da Conta | `PaymentMethod`    | Método de pagamento                         |
+| 💰 Dados Financeiros    | `MonthlyCharges`   | Valor cobrado mensalmente                   |
+| 💰 Dados Financeiros    | `TotalCharges`     | Valor total pago pelo cliente               |
+| 🎯 Variável Alvo        | `Churn`            | Indica se o cliente cancelou o serviço      |
 
-✔️gender
+🎯 Interpretação da variável alvo
+| Valor | Significado                   |
+| ----- | ----------------------------- |
+| `0`   | Cliente permaneceu na empresa |
+| `1`   | Cliente cancelou o serviço    |
 
-✔️SeniorCitizen
 
-✔️Partner
 
-✔️Dependents
-
-📡 Serviços Contratados
-
-✔️PhoneService
-
-✔️MultipleLines
-
-✔️InternetService
-
-✔️OnlineSecurity
-
-✔️OnlineBackup
-
-✔️DeviceProtection
-
-✔️TechSupport
-
-✔️StreamingTV
-
-✔️StreamingMovies
-
-📑 Informações da Conta
-
-✔️tenure (tempo como cliente)
-
-✔️Contract
-
-✔️PaperlessBilling
-
-✔️PaymentMethod
-
-💰 Dados Financeiros
-
-✔️MonthlyCharges
-
-✔️TotalCharges
-
-🎯 Variável alvo
-
-✔️Churn
-
-0 → cliente permaneceu
-
-1 → cliente cancelou
-
-## ⚙️ Tecnologias Utilizadas
+##⚙️ Tecnologias Utilizadas
 
 Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 
-✔️🐍 Python
+| Tecnologia                             | Descrição                                           |
+| -------------------------------------- | --------------------------------------------------- |
+| 🐍 **Python**                          | Linguagem principal utilizada para análise de dados |
+| 📊 **Pandas**                          | Manipulação e tratamento de dados                   |
+| 🔢 **NumPy**                           | Operações numéricas e manipulação de arrays         |
+| 📈 **Matplotlib**                      | Criação de gráficos e visualizações de dados        |
+| 🎨 **Seaborn**                         | Visualizações estatísticas mais avançadas           |
+| 🌐 **Requests**                        | Coleta de dados através de requisições à API        |
+| 📓 **Google Colab / Jupyter Notebook** | Ambiente interativo para desenvolvimento e análise  |
 
-✔️📊 Pandas
-
-✔️🔢 NumPy
-
-✔️📈 Matplotlib
-
-✔️🎨 Seaborn
-
-✔️🌐 Requests
-
-✔️📓 Google Colab / Jupyter Notebook
 
 ## 🔧 Etapas do Projeto
 
 O projeto foi dividido em etapas típicas de um fluxo de Data Science.
+| Etapa                                         | Descrição                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 📥 **1. Ingestão de Dados**                   | ☑️ Coleta de dados via API<br>☑️ Conversão do JSON para DataFrame                                                                                                                                                                                                                                                                                     |
+| 🔎 **2. Exploração Inicial**                  | ☑️ Análise da estrutura do dataset<br>☑️ Identificação das variáveis<br>☑️ Verificação de tipos de dados                                                                                                                                                                                                                                              |
+| 🧹 **3. Limpeza e Tratamento (ETL)**          | ☑️ Tratamento de valores ausentes<br>☑️ Conversão de variáveis numéricas<br>☑️ Padronização de categorias<br>☑️ Transformação da variável **Churn** em binária                                                                                                                                                                                        |
+| 📊 **4. Análise Exploratória de Dados (EDA)** | ☑️ 📊 Distribuição de churn<br>☑️ 📄 Churn por tipo de contrato<br>☑️ 👥 Churn por gênero, dependentes e parceiros<br>☑️ 💳 Churn por método de pagamento<br>☑️ 🌐 Churn por tipo de internet<br>☑️ ⏳ Tempo de contrato vs churn<br>☑️ 💰 Valor mensal vs churn<br>☑️ 🔗 Correlação entre variáveis numéricas<br>☑️ 🛡️ Churn por serviços adicionais |
 
-1️⃣ Ingestão de Dados
-
-☑️Coleta de dados via API
-
-☑️Conversão do JSON para DataFrame
-
-2️⃣ Exploração Inicial
-
-☑️Análise da estrutura do dataset
-
-☑️Identificação de variáveis
-
-☑️Verificação de tipos de dados
-
-3️⃣ Limpeza e Tratamento (ETL)
-
-☑️Tratamento de valores ausentes
-
-☑️Conversão de variáveis numéricas
-
-☑️Padronização de categorias
-
-☑️Transformação da variável Churn em binária
-
-4️⃣ Análise Exploratória de Dados (EDA)
-
-Foram analisados diversos aspectos do comportamento dos clientes:
-
-☑️📊 Distribuição de churn
-
-☑️📄 Churn por tipo de contrato
-
-☑️👥 Churn por gênero, dependentes e parceiros
-
-☑️💳 Churn por método de pagamento
-
-☑️🌐 Churn por tipo de internet
-
-☑️⏳ Tempo de contrato vs churn
-
-☑️💰 Valor mensal vs churn
-
-☑️🔗 Correlação entre variáveis numéricas
-
-☑️🛡️ Churn por serviços adicionais
 
 ## 📊 Principais Insights
 
 A análise revelou padrões importantes sobre o comportamento dos clientes.
 
-📄 Contratos mensais apresentam maior churn
+| Insight                                                     | Evidência Observada                                                                                                                                | Recomendação Estratégica                                                                              |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 📄 **Contratos mensais apresentam maior churn**             | Clientes com contratos **Month-to-Month** possuem taxas significativamente maiores de cancelamento em comparação com contratos anuais ou bienais.  | ➡ Incentivar contratos de longo prazo com benefícios ou descontos pode reduzir a evasão.              |
+| ⏳ **Clientes novos cancelam mais**                          | A maior parte do churn ocorre nos **primeiros meses de contrato**, indicando maior risco no início da jornada do cliente.                          | ➡ Implementar **onboarding estruturado** e acompanhamento nos primeiros meses para aumentar retenção. |
+| 💰 **Valores mensais mais altos aumentam o risco de churn** | Clientes com **MonthlyCharges mais elevados** apresentam maior probabilidade de cancelar o serviço.                                                | ➡ Avaliar a **percepção de custo-benefício dos planos** e oferecer alternativas mais atrativas.       |
+| 🛡️ **Serviços adicionais reduzem churn**                   | Clientes que possuem serviços como **OnlineSecurity, TechSupport e DeviceProtection** apresentam taxas significativamente menores de cancelamento. | ➡ Oferecer **pacotes de serviços adicionais** pode aumentar o engajamento e reduzir churn.            |
 
-Clientes com contratos month-to-month possuem taxas de cancelamento significativamente maiores.
 
-➡ Incentivar contratos anuais pode reduzir a evasão.
-
-⏳ Clientes novos cancelam mais
-
-Grande parte dos cancelamentos ocorre nos primeiros meses de contrato.
-
-➡ Melhorar o onboarding do cliente pode aumentar retenção.
-
-💰 Valores mensais mais altos aumentam o risco de churn
-
-Clientes com MonthlyCharges mais altos apresentam maior tendência a cancelar.
-
-➡ Avaliar percepção de custo-benefício dos planos.
-
-🛡️ Serviços adicionais reduzem churn
-
-Clientes com serviços como:
-
-OnlineSecurity
-
-TechSupport
-
-DeviceProtection
-
-apresentam taxas muito menores de cancelamento.
-
-➡ Oferecer pacotes de serviços adicionais pode aumentar retenção.
 
 ## 🚀 Como Executar o Projeto
 1️⃣ Clonar o repositório
@@ -235,26 +147,22 @@ Arquivo:
 telecom_churn_analysis.ipynb
 ```
 
+
 ## 📈 Possíveis Melhorias Futuras
 
-Este projeto pode ser expandido com:
+Este projeto pode ser expandido com novas análises e ferramentas para aprofundar a compreensão do churn e gerar previsões mais precisas.
 
-👉🤖 Modelos de Machine Learning para previsão de churn
+| Categoria                    | Possível Melhoria                           | Descrição                                                                                                    |
+| ---------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 🤖 **Machine Learning**      | Modelos de previsão de churn                | Desenvolver modelos preditivos para identificar clientes com maior risco de cancelamento.                    |
+| 🧠 **Algoritmos de ML**      | Logistic Regression, Random Forest, XGBoost | Aplicar diferentes algoritmos para comparar desempenho e identificar o modelo mais eficaz para prever churn. |
+| 📊 **Dashboard Interativo**  | Power BI ou Streamlit                       | Criar dashboards interativos para facilitar a visualização e acompanhamento dos indicadores de churn.        |
+| 🔍 **Análise de Features**   | Feature Importance                          | Identificar quais variáveis possuem maior influência na previsão de churn.                                   |
+| 📉 **Métricas de Avaliação** | Acurácia, Recall, F1-score, ROC-AUC         | Avaliar o desempenho dos modelos utilizando métricas adequadas para problemas de classificação.              |
 
-👉📊 Dashboard interativo com Power BI ou Streamlit
 
-👉🔍 Análise de feature importance
+## 👩‍💻 Autora
 
-🧠 Modelos como:
+Projeto desenvolvido por Kelly Costa como parte dos estudos em Data Science e Análise de Dados, com foco em análise exploratória de dados (EDA), visualização e geração de insights estratégicos.
 
-👉Logistic Regression
-
-👉Random Forest
-
-👉XGBoost
-
-## 👩‍💻 Autor
-
-Projeto desenvolvido como parte de estudos em Data Science e Análise de Dados.
-
-⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!
+⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório para apoiar o trabalho!
